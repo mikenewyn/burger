@@ -1,5 +1,5 @@
 <h1>Time to devour some Burgers!</h1>
-
+<link rel="icon" href="../public/assets/img/burger1.gif">
 <div class="row">
     <!-- Left side (ready to eat) -->
     <div class="col-md-6">
@@ -9,14 +9,12 @@
             <!-- Dynamically Insert Ready Burgers Here -->
             {{#each burgers}}
             {{#unless devoured}}
-            <form action="burger/eat/{{id}}" method="POST">
                 <div class="input-group">
                     <li class="form-control">{{id}}. {{burger_name}}</li>
                     <span class="input-group-btn">
-                        <button class="btn btn-success devour-button" type="submit">Devour It!</button>
+                        <button class="btn btn-success devour-button" data-id="{{id}}" type="submit">Devour It!</button>
                     </span>
                 </div>
-            </form>
             {{/unless}}
             {{/each}}
 
@@ -45,9 +43,9 @@
 
 <div class="row">
     <div class="col s12">
-        <form action="/burgers" method="POST">
-            <input type="text" id="name" name="burger_name" placeholder="Your Burger">
-            <button type="submit" class="addBurgerButton">Add The Burger</button>
+        <form class="create-form" action="/burgers" method="POST">
+            <input type="text" id="newBurger" name="burger_name" placeholder="Your Burger">
+            <button type="submit" class="addBurgerButton">Add new Burger</button>
         </form>
     </div>
 </div>
