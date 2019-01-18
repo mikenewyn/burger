@@ -13,7 +13,7 @@ if (process.env.JAWSDB_URL) {
   };
 }
 
-var connection = mysql.createConnection(connecitoninfo);
+var connection = mysql.createConnection(connectionInfo);
 // Make connection.
 connection.connect(function(err) {
   if (err) {
